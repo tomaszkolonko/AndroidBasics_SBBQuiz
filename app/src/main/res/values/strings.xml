@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">AndroidBasicsSBBQuiz</string>
+
+    <!-- EditText Hints -->
+    <string name="input_text_hint_name">Please enter your name</string>
+    <string name="input_text_hint_email">Please enter your email address</string>
+    <string name="checkbox_receive_email_summary">Check this box to receive email summary</string>
 </resources>
