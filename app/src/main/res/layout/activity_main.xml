@@ -178,7 +178,7 @@
             android:text="@string/question_five" />
 
         <EditText
-            android:id="@+id/input_text_questionx"
+            android:id="@+id/input_text_question_five"
             style="@style/GeneralEditTextViews"
             android:hint="@string/multiline_input_hint"
             android:inputType="textMultiLine" />
@@ -188,7 +188,7 @@
             android:text="@string/question_six" />
 
         <EditText
-            android:id="@+id/input_text_questiony"
+            android:id="@+id/input_text_question_six"
             style="@style/GeneralEditTextViews"
             android:hint="@string/multiline_input_hint"
             android:inputType="textMultiLine" />
