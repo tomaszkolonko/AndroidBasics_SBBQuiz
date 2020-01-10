@@ -1,4 +1,7 @@
 <resources>
     <dimen name="checkbox_text_padding">24dp</dimen>
+    <dimen name="checkbox_margin_left">20dp</dimen>
     <dimen name="activity_margin">20dp</dimen>
+    <dimen name="margin_below_title">10dp</dimen>
+    <dimen name="margin_above_title">30dp</dimen>
 </resources>

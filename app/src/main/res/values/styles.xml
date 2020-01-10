@@ -29,4 +29,28 @@
         <item name="android:layout_width">match_parent</item>
     </style>
 
+    <style name="GeneralCheckBoxViews" >
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">@dimen/checkbox_margin_left</item>
+        <item name="android:paddingLeft">@dimen/checkbox_text_padding</item>
+    </style>
+
+    <style name="GeneralQuestion" >
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/margin_above_title</item>
+        <item name="android:layout_marginBottom">@dimen/margin_below_title</item>
+        <item name="android:layout_marginLeft">@dimen/activity_margin</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="GeneralRadioButton" >
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">@dimen/checkbox_margin_left</item>
+        <item name="android:paddingLeft">@dimen/checkbox_text_padding</item>
+
+    </style>
+
 </resources>

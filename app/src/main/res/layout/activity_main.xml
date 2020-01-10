@@ -38,12 +38,9 @@
 
         <CheckBox
             android:id="@+id/checkbox_receive_email"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingLeft="@dimen/checkbox_text_padding"
+            style="@style/GeneralCheckBoxViews"
+            android:layout_marginTop="@dimen/activity_margin"
             android:text="@string/checkbox_receive_email_summary" />
-
-
 
 
         <!-- QUIZ -->
@@ -55,72 +52,53 @@
         <!-- Two Checkbox Questions -->
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="question one" />
+            style="@style/GeneralQuestion"
+            android:text="@string/question_one" />
 
         <CheckBox
-            android:id="@+id/oneone"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingLeft="@dimen/checkbox_text_padding"
-            android:text="A" />
+            android:id="@+id/question_one_answer_a"
+            style="@style/GeneralCheckBoxViews"
+            android:text="@string/question_one_answer_a" />
 
         <CheckBox
-            android:id="@+id/onetwo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingLeft="@dimen/checkbox_text_padding"
-            android:text="B" />
+            android:id="@+id/question_one_answer_b"
+            style="@style/GeneralCheckBoxViews"
+            android:text="@string/question_one_answer_b" />
 
         <CheckBox
-            android:id="@+id/onethree"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingLeft="@dimen/checkbox_text_padding"
-            android:text="C" />
+            android:id="@+id/question_one_answer_c"
+            style="@style/GeneralCheckBoxViews"
+            android:text="@string/question_one_answer_c" />
 
         <CheckBox
-            android:id="@+id/onefour"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingLeft="@dimen/checkbox_text_padding"
-            android:text="D" />
-
+            android:id="@+id/question_one_answer_d"
+            style="@style/GeneralCheckBoxViews"
+            android:text="@string/question_one_answer_d" />
 
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="question two" />
+            style="@style/GeneralQuestion"
+            android:text="@string/question_two" />
 
         <CheckBox
-            android:id="@+id/twoone"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingLeft="@dimen/checkbox_text_padding"
-            android:text="A" />
+            android:id="@+id/question_two_answer_a"
+            style="@style/GeneralCheckBoxViews"
+            android:text="@string/question_two_answer_a" />
 
         <CheckBox
-            android:id="@+id/twotwo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingLeft="@dimen/checkbox_text_padding"
-            android:text="B" />
+            android:id="@+id/question_two_answer_b"
+            style="@style/GeneralCheckBoxViews"
+            android:text="@string/question_two_answer_b" />
 
         <CheckBox
-            android:id="@+id/twothree"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingLeft="@dimen/checkbox_text_padding"
-            android:text="C" />
+            android:id="@+id/question_two_answer_c"
+            style="@style/GeneralCheckBoxViews"
+            android:text="@string/question_two_answer_c" />
 
         <CheckBox
-            android:id="@+id/twofour"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingLeft="@dimen/checkbox_text_padding"
-            android:text="D" />
+            android:id="@+id/question_two_answer_d"
+            style="@style/GeneralCheckBoxViews"
+            android:text="@string/question_two_answer_d" />
 
         <!-- Two RadioButton Questions -->
 
@@ -130,23 +108,32 @@
             android:orientation="vertical">
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="1) Question about this and that" />
+                style="@style/GeneralQuestion"
+                android:text="@string/question_three" />
 
             <RadioButton
-                android:id="@+id/radio_pirates"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:id="@+id/question_three_answer_a"
+                style="@style/GeneralRadioButton"
                 android:onClick="onRadioButtonClicked"
-                android:text="Answer One" />
+                android:text="@string/question_three_answer_a" />
 
             <RadioButton
-                android:id="@+id/radio_ninjas"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:id="@+id/question_three_answer_b"
+                style="@style/GeneralRadioButton"
                 android:onClick="onRadioButtonClicked"
-                android:text="Answer Two" />
+                android:text="@string/question_three_answer_b" />
+
+            <RadioButton
+                android:id="@+id/question_three_answer_c"
+                style="@style/GeneralRadioButton"
+                android:onClick="onRadioButtonClicked"
+                android:text="@string/question_three_answer_c" />
+
+            <RadioButton
+                android:id="@+id/question_three_answer_d"
+                style="@style/GeneralRadioButton"
+                android:onClick="onRadioButtonClicked"
+                android:text="@string/question_three_answer_d" />
         </RadioGroup>
 
         <RadioGroup
@@ -155,58 +142,72 @@
             android:orientation="vertical">
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="2) Question about this and that" />
+                style="@style/GeneralQuestion"
+                android:text="@string/question_four" />
 
             <RadioButton
-                android:id="@+id/asdf"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:id="@+id/question_four_answer_a"
+                style="@style/GeneralRadioButton"
                 android:onClick="onRadioButtonClicked"
-                android:text="Answer One" />
+                android:text="@string/question_four_answer_a" />
 
             <RadioButton
-                android:id="@+id/asdfe"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:id="@+id/question_four_answer_b"
+                style="@style/GeneralRadioButton"
                 android:onClick="onRadioButtonClicked"
-                android:text="Answer Two" />
+                android:text="@string/question_four_answer_b" />
+
+            <RadioButton
+                android:id="@+id/question_four_answer_c"
+                style="@style/GeneralRadioButton"
+                android:onClick="onRadioButtonClicked"
+                android:text="@string/question_four_answer_c" />
+
+            <RadioButton
+                android:id="@+id/question_four_answer_d"
+                style="@style/GeneralRadioButton"
+                android:onClick="onRadioButtonClicked"
+                android:text="@string/question_four_answer_d" />
         </RadioGroup>
 
         <!-- Two FreeText Questions -->
 
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Question X" />
+            style="@style/GeneralQuestion"
+            android:text="@string/question_five" />
 
         <EditText
             android:id="@+id/input_text_questionx"
             style="@style/GeneralEditTextViews"
-            android:hint="@string/input_text_hint_email"
+            android:hint="@string/multiline_input_hint"
             android:inputType="textMultiLine" />
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Question Y" />
+            style="@style/GeneralQuestion"
+            android:text="@string/question_six" />
 
         <EditText
             android:id="@+id/input_text_questiony"
             style="@style/GeneralEditTextViews"
-            android:hint="@string/input_text_hint_email"
+            android:hint="@string/multiline_input_hint"
             android:inputType="textMultiLine" />
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
 
-        <Button
-            android:id="@+id/send_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="submitQuiz"
-            android:text="Button" />
+            <Button
+                android:id="@+id/send_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:padding="10dp"
+                android:onClick="submitQuiz"
+                android:layout_centerHorizontal="true"
+                android:text="@string/submint_button" />
 
+        </RelativeLayout>
     </LinearLayout>
 
 </ScrollView>

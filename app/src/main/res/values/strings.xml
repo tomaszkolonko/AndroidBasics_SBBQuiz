@@ -5,4 +5,42 @@
     <string name="input_text_hint_name">Please enter your name</string>
     <string name="input_text_hint_email">Please enter your email address</string>
     <string name="checkbox_receive_email_summary">Check this box to receive email summary</string>
+
+    <!-- Question 1 -->
+    <string name="question_one">1) Which train companies can be found in Switzerland?</string>
+    <string name="question_one_answer_a">SBB (swiss)</string>
+    <string name="question_one_answer_b">DB (german)</string>
+    <string name="question_one_answer_c">ÖBB (austrian)</string>
+    <string name="question_one_answer_d">RENFE (spanish)</string>
+
+    <!-- Question 2 -->
+    <string name="question_two">2) Which three languages are present in the official name of the Swiss Federal Railways (SBB CFF FFS)?</string>
+    <string name="question_two_answer_a">French</string>
+    <string name="question_two_answer_b">English</string>
+    <string name="question_two_answer_c">German</string>
+    <string name="question_two_answer_d">Swedish</string>
+
+    <!-- Question 3 -->
+    <string name="question_three">3) How many employees were working at SBB in 2018</string>
+    <string name="question_three_answer_a">About 15\'000</string>
+    <string name="question_three_answer_b">About 27\'000</string>
+    <string name="question_three_answer_c">About 32\'000</string>
+    <string name="question_three_answer_d">About 49\'000</string>
+
+    <!-- Question 4 -->
+    <string name="question_four">4) How many kilometers of railroads are there in Switzerland?</string>
+    <string name="question_four_answer_a">About 3\'000 km</string>
+    <string name="question_four_answer_b">About 9\'000 km</string>
+    <string name="question_four_answer_c">About 12\'000 km</string>
+    <string name="question_four_answer_d">About 18\'000 km</string>
+
+    <!-- Question 5 -->
+    <string name="question_five">5) Talk about your experience when you were travelling with SBB.</string>
+    <string name="multiline_input_hint">Enter your answer here</string>
+    <!-- Question 6 -->
+    <string name="question_six">6) What do you think about the ticket prices?</string>
+
+    <!-- Button -->
+    <string name="submint_button">Submit</string>
+
 </resources>
