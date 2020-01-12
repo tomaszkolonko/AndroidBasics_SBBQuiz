@@ -2,6 +2,8 @@ package com.example.android.androidbasicssbbquiz;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
@@ -25,19 +27,47 @@ public class MainActivity extends AppCompatActivity {
     public void submitQuiz(View view) {
         fetchPersonalInformation();
         updateScoreValuesWithAnswers();
+        String message = createMessage();
         if(emailSummaryRequested) {
-            sendOutEmailSummary();
+            sendOutEmailSummary(message);
         } else {
-            updateSummaryView();
+            updateSummaryView(message);
         }
     }
 
-    private void sendOutEmailSummary() {
-        // TODO implement me
+    /**
+     * This method creates a message from the String ressource and 3 global variables
+     *
+     * @return
+     */
+    private String createMessage() {
+        String result = (score >= 5) ? "PASSED" : "FAILED";
+        String messageWithPlaceholders = getString(R.string.summary_message);
+        String message = String.format(messageWithPlaceholders, name, score, result);
+        return message;
     }
 
-    private void updateSummaryView() {
-        // TODO implement me
+    private void sendOutEmailSummary(String message) {
+        Intent intent = new Intent(Intent.ACTION_SENDTO);
+        intent.setData(Uri.parse("mailto:"));
+        intent.putExtra(Intent.EXTRA_EMAIL, email);
+        intent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.email_subject) + name);
+        intent.putExtra(Intent.EXTRA_TEXT, message);
+
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);
+        }
+
+    }
+
+    /**
+     * If the user didn't request an email summary, display the results on the screen.
+     *
+     * @param message
+     */
+    private void updateSummaryView(String message) {
+        TextView view = findViewById(R.id.summary_text_view);
+        view.setText(message);
     }
 
     /**

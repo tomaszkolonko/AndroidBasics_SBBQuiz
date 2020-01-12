@@ -43,6 +43,13 @@
     <!-- Question 6 -->
     <string name="question_six">6) What do you think about the ticket prices?</string>
 
+    <string name="summaryReview">Summary Review</string>
+
+    <!-- Summary -->
+    <string name="summary_message">Thanks %1$s for submitting your Quiz. You scored %2$d points. You are required to score 5 points to pass. Result: %3$s !!!</string>
+    <string name="email_subject">Quiz summary for </string>
+
+
     <!-- Button -->
     <string name="submint_button">Submit</string>
 

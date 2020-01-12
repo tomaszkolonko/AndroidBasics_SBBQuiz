@@ -13,17 +13,20 @@
     <string name="question_two_answer_b">Änglisch</string>
     <string name="input_text_hint_name">Schrieb din Namen hier inne</string>
     <string name="input_text_hint_email">Schrieb dini Email hier inne</string>
-    <string name="checkbox_receive_email_summary">Klick die Checkbox a um en Email z'becho</string>
+    <string name="checkbox_receive_email_summary">Klick die Checkbox a um en Email z\'becho</string>
     <string name="question_four_answer_b">Ungfähr 9\'000 km</string>
     <string name="question_three_answer_d">Ungfähr 49\'000</string>
     <string name="question_three_answer_c">Ungfähr 32\'000</string>
     <string name="question_four_answer_a">Ungfähr 3\'000 km</string>
     <string name="question_three_answer_b">Ungfähr 27\'000</string>
     <string name="question_four_answer_d">Ungfähr 18\'000 km</string>
-    <string name="question_six">6) Was dänksch du über d'Ticketpriise?</string>
+    <string name="question_six">6) Was dänksch du über d\'Ticketpriise?</string>
     <string name="question_one">1) Welche EVU\'s trifft mer i de Schwiiz a?</string>
     <string name="question_two">2) In welne drü Sprache isch dr Name dr SBB geschriebe?</string>
     <string name="question_three">3) Wieviel Mitarbeiter sind 2018 bi de SBB angestellt gsi?</string>
     <string name="question_four">4) Wieviel Kilometer Schienennetz gits in de Schwiiz?</string>
     <string name="question_five">5) Sprich über dini Erfahrige mit dr SBB.</string>
+    <string name="summaryReview">Zämmefassig</string>
+    <string name="summary_message">Thanks %1$s for submitting your Quiz. You scored %2$d points. You are required to score 5 points to pass. Result: %3$s !!!</string>
+    <string name="email_subject">Quiz summary for </string>
 </resources>
