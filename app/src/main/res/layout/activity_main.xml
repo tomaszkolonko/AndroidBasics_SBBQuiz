@@ -22,7 +22,7 @@
 
         <TextView
             style="@style/BlockTitle"
-            android:text="Personal Information" />
+            android:text="@string/segment_title_one" />
 
         <EditText
             android:id="@+id/input_text_name"
@@ -47,7 +47,7 @@
 
         <TextView
             style="@style/BlockTitle"
-            android:text="Quiz" />
+            android:text="@string/segment_title_two" />
 
         <!-- Two Checkbox Questions -->
 
@@ -114,25 +114,21 @@
             <RadioButton
                 android:id="@+id/question_three_answer_a"
                 style="@style/GeneralRadioButton"
-                android:onClick="onRadioButtonClicked"
                 android:text="@string/question_three_answer_a" />
 
             <RadioButton
                 android:id="@+id/question_three_answer_b"
                 style="@style/GeneralRadioButton"
-                android:onClick="onRadioButtonClicked"
                 android:text="@string/question_three_answer_b" />
 
             <RadioButton
                 android:id="@+id/question_three_answer_c"
                 style="@style/GeneralRadioButton"
-                android:onClick="onRadioButtonClicked"
                 android:text="@string/question_three_answer_c" />
 
             <RadioButton
                 android:id="@+id/question_three_answer_d"
                 style="@style/GeneralRadioButton"
-                android:onClick="onRadioButtonClicked"
                 android:text="@string/question_three_answer_d" />
         </RadioGroup>
 
@@ -148,25 +144,21 @@
             <RadioButton
                 android:id="@+id/question_four_answer_a"
                 style="@style/GeneralRadioButton"
-                android:onClick="onRadioButtonClicked"
                 android:text="@string/question_four_answer_a" />
 
             <RadioButton
                 android:id="@+id/question_four_answer_b"
                 style="@style/GeneralRadioButton"
-                android:onClick="onRadioButtonClicked"
                 android:text="@string/question_four_answer_b" />
 
             <RadioButton
                 android:id="@+id/question_four_answer_c"
                 style="@style/GeneralRadioButton"
-                android:onClick="onRadioButtonClicked"
                 android:text="@string/question_four_answer_c" />
 
             <RadioButton
                 android:id="@+id/question_four_answer_d"
                 style="@style/GeneralRadioButton"
-                android:onClick="onRadioButtonClicked"
                 android:text="@string/question_four_answer_d" />
         </RadioGroup>
 
@@ -192,6 +184,11 @@
             style="@style/GeneralEditTextViews"
             android:hint="@string/multiline_input_hint"
             android:inputType="textMultiLine" />
+
+        <TextView
+            android:id="@+id/summary_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
 
         <RelativeLayout
             android:layout_width="match_parent"

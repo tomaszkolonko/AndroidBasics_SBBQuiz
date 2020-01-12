@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">AndroidBasicsSBBQuiz</string>
 
+    <string name="segment_title_one">Personal Information</string>
+    <string name="segment_title_two">Quiz</string>
+
     <!-- EditText Hints -->
     <string name="input_text_hint_name">Please enter your name</string>
     <string name="input_text_hint_email">Please enter your email address</string>
@@ -8,10 +11,10 @@
 
     <!-- Question 1 -->
     <string name="question_one">1) Which train companies can be found in Switzerland?</string>
-    <string name="question_one_answer_a">SBB (swiss)</string>
-    <string name="question_one_answer_b">DB (german)</string>
-    <string name="question_one_answer_c">ÖBB (austrian)</string>
-    <string name="question_one_answer_d">RENFE (spanish)</string>
+    <string name="question_one_answer_a" translatable="false">SBB (swiss)</string>
+    <string name="question_one_answer_b" translatable="false">DB (german)</string>
+    <string name="question_one_answer_c" translatable="false">ÖBB (austrian)</string>
+    <string name="question_one_answer_d" translatable="false">RENFE (spanish)</string>
 
     <!-- Question 2 -->
     <string name="question_two">2) Which three languages are present in the official name of the Swiss Federal Railways (SBB CFF FFS)?</string>
