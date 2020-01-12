@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
@@ -24,15 +25,51 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
+
     public void submitQuiz(View view) {
+        if (view.getTag().equals(1)) {
+            resetQuiz();
+        } else {
+            processQuiz();
+        }
+    }
+
+    /**
+     * Instead of resetting all the checkboxes and radioboxes and textfields, it
+     * is much easier to simple restart the application.
+     */
+    private void resetQuiz() {
+        Intent intent = getIntent();
+        finish();
+        startActivity(intent);
+    }
+
+    /**
+     * Processing the Quiz. Getting personal information, updating the score and sending
+     * the email out if requestd.
+     */
+    private void processQuiz() {
         fetchPersonalInformation();
         updateScoreValuesWithAnswers();
         String message = createMessage();
         if(emailSummaryRequested) {
             sendOutEmailSummary(message);
-        } else {
-            updateSummaryView(message);
         }
+        updateSummaryView(message);
+        updateSubmitButton();
+    }
+
+    /**
+     * When the naming of the button changes, the tag of the button must be updated in
+     * order to dicriminate between two actions taken by onClick().
+     * Changing the Tag to 0 is not necessary since if the test is retaken, the app
+     * is restarted and the tag is 0 by default.
+     */
+    private void updateSubmitButton() {
+        Button button = findViewById(R.id.send_button);
+        button.setText("ReTake Quiz?");
+        button.setTag(1);
+
     }
 
     /**
@@ -47,11 +84,17 @@ public class MainActivity extends AppCompatActivity {
         return message;
     }
 
+
+    /**
+     * This method is called if the user checked the summary by email option. It
+     * sends the email with pre-defined subject and body.
+     *
+     * @param message
+     */
     private void sendOutEmailSummary(String message) {
         Intent intent = new Intent(Intent.ACTION_SENDTO);
-        intent.setData(Uri.parse("mailto:"));
-        intent.putExtra(Intent.EXTRA_EMAIL, email);
-        intent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.email_subject) + name);
+        intent.setData(Uri.parse("mailto:"+email));
+        intent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.email_subject) + " " + name);
         intent.putExtra(Intent.EXTRA_TEXT, message);
 
         if (intent.resolveActivity(getPackageManager()) != null) {
