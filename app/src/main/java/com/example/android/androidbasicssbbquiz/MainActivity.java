@@ -12,6 +12,9 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
 
     private String name;
@@ -214,7 +217,8 @@ public class MainActivity extends AppCompatActivity {
     private int fetchResultFifthQuestion() {
         EditText editTextField = findViewById(R.id.input_text_question_five);
         String answer = editTextField.getText().toString();
-        if(!answer.isEmpty()) {
+        String[] correctAnswers = {"switzerland", "schweiz", "helvetia", "swiss", "schwiiz"};
+        if(Arrays.asList(answer.split(" ")).contains(correctAnswers)) {
             return 1;
         }
         return 0;
@@ -229,7 +233,8 @@ public class MainActivity extends AppCompatActivity {
     private int fetchResultSixthQuestion() {
         EditText editTextField = findViewById(R.id.input_text_question_five);
         String answer = editTextField.getText().toString();
-        if(!answer.isEmpty()) {
+        String[] correctAnswers = {"germany", "deutschland", "dütschland", "france", "frankreich", "frankriich"};
+        if(Arrays.asList(answer.split(" ")).contains(correctAnswers)) {
             return 1;
         }
         return 0;

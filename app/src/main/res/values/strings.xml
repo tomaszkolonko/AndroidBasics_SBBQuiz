@@ -38,14 +38,13 @@
     <string name="question_four_answer_d">About 18\'000 km</string>
 
     <!-- Question 5 -->
-    <string name="question_five">5) Talk about your experience when you were travelling with SBB.</string>
+    <string name="question_five">5) In which country does SBB mainly operate in?</string>
     <string name="multiline_input_hint">Enter your answer here</string>
     <!-- Question 6 -->
-    <string name="question_six">6) What do you think about the ticket prices?</string>
-
-    <string name="summaryReview">Summary Review</string>
+    <string name="question_six">6) In what other countries does SBB has destinations it service with its own trains?</string>
 
     <!-- Summary -->
+    <string name="summaryReview">Summary Review</string>
     <string name="summary_message">Thanks %1$s for submitting your Quiz. You scored %2$d points. You are required to score 5 points to pass. Result: %3$s !!!</string>
     <string name="email_subject">Quiz summary for </string>
 
