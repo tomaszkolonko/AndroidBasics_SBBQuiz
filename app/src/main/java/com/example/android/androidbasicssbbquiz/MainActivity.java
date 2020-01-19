@@ -11,7 +11,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -44,9 +46,64 @@ public class MainActivity extends AppCompatActivity {
      * is much easier to simple restart the application.
      */
     private void resetQuiz() {
-        Intent intent = getIntent();
-        finish();
-        startActivity(intent);
+        resetPersonalInformation();
+        resetQuestions();
+        resetTextView();
+    }
+
+    /**
+     * This method resets all textViews and checkboxes of the personal part.
+     * The hints are re-displayes as soon as the text is set to emtpy.
+     */
+    private void resetPersonalInformation() {
+        TextView nameView = findViewById(R.id.input_text_name);
+        nameView.setText("");
+        TextView emailView = findViewById(R.id.input_text_email);
+        emailView.setText("");
+        CheckBox emailCheckBox = findViewById(R.id.checkbox_receive_email);
+        emailCheckBox.setChecked(false);
+    }
+
+    private void resetQuestions() {
+        LinearLayout layout = findViewById(R.id.linear_layout);
+
+        for (int i = 0; i < layout.getChildCount(); i++) {
+            View v = layout.getChildAt(i);
+            if (v instanceof CheckBox) {
+                ((CheckBox) v).setChecked(false);
+            } else if (v instanceof RadioGroup) {
+                resetRadioGroup((RadioGroup) v);
+            } else if (v instanceof EditText) {
+                if(v.getId() == R.id.input_text_question_six
+                || v.getId() == R.id.input_text_question_five) {
+                    ((EditText) v).setText("");
+                }
+            }
+
+        }
+    }
+
+    /**
+     * This method gets the current RadioGroup and finds all it's RadioButton
+     * children which it sets to unchecked.
+     *
+     * @param radioGroup
+     */
+    private void resetRadioGroup(RadioGroup radioGroup) {
+        for(int i = 0; i < radioGroup.getChildCount(); i++) {
+            View v = radioGroup.getChildAt(i);
+            if(v instanceof RadioButton) {
+                ((RadioButton) v).setChecked(false);
+            }
+        }
+    }
+
+    private void resetTextView() {
+        TextView summaryView = findViewById(R.id.summary_text_view);
+        summaryView.setText("");
+        Button submitButton = findViewById(R.id.send_button);
+        submitButton.setTag(0);
+        submitButton.setText(R.string.submint_button);
     }
 
     /**
