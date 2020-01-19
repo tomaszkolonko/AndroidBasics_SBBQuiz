@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -22,7 +23,6 @@ public class MainActivity extends AppCompatActivity {
     private String name;
     private String email;
     private boolean emailSummaryRequested = false;
-    int score;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,9 +55,9 @@ public class MainActivity extends AppCompatActivity {
      */
     private void processQuiz() {
         fetchPersonalInformation();
-        updateScoreValuesWithAnswers();
-        String message = createMessage();
-        createAndDisplayToastMessage();
+        int score = updateScoreValuesWithAnswers();
+        String message = createMessage(score);
+        createAndDisplayToastMessage(score);
         if(emailSummaryRequested) {
             sendOutEmailSummary(message);
         }
@@ -69,8 +69,10 @@ public class MainActivity extends AppCompatActivity {
     /**
      * This method creates a toast of short duration and displays the total
      * score of the user.
+     *
+     * @param score
      */
-    private void createAndDisplayToastMessage() {
+    private void createAndDisplayToastMessage(int score) {
         Context context = getApplicationContext();
         CharSequence totalScore = "Yout Total Score is: " + score;
         int durationOfToast = Toast.LENGTH_SHORT;
@@ -95,9 +97,10 @@ public class MainActivity extends AppCompatActivity {
     /**
      * This method creates a message from the String ressource and 3 global variables
      *
+     * @param score
      * @return
      */
-    private String createMessage() {
+    private String createMessage(int score) {
         String result = (score >= 5) ? "PASSED" : "FAILED";
         String messageWithPlaceholders = getString(R.string.summary_message);
         String message = String.format(messageWithPlaceholders, name, score, result);
@@ -134,16 +137,22 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * This method updates the global score variable by going through each question
+     * This method updates the local score variable by going through each question
      * and adding 1 to the score if the question was answered correctly and 0 if it wasn't
+     *
+     * @return
      */
-    private void updateScoreValuesWithAnswers() {
+    private int updateScoreValuesWithAnswers() {
+        int score = 0;
+
         score += fetchResultFirstQuestion();
         score += fetchResultSecondQuestion();
         score += fetchResultThirdQuestion();
         score += fetchResultFourthQuestion();
         score += fetchResultFifthQuestion();
         score += fetchResultSixthQuestion();
+
+        return score;
     }
 
     /**
@@ -173,8 +182,10 @@ public class MainActivity extends AppCompatActivity {
 
         if(answerACheckBox.isChecked() && answerBCheckBox.isChecked()
                 && answerCCheckBox.isChecked() && !answerDCheckBox.isChecked()) {
+            Log.v("MainActivity", "Question 1: received 1 point");
             return 1;
         }
+        Log.v("MainActivity", "Question 1: received 0 point");
         return 0;
     }
 
@@ -192,8 +203,10 @@ public class MainActivity extends AppCompatActivity {
 
         if(answerACheckBox.isChecked() && !answerBCheckBox.isChecked()
                 && answerCCheckBox.isChecked() && !answerDCheckBox.isChecked()) {
+            Log.v("MainActivity", "Question 2: received 1 point");
             return 1;
         }
+        Log.v("MainActivity", "Question 2: received 0 point");
         return 0;
     }
 
@@ -206,8 +219,10 @@ public class MainActivity extends AppCompatActivity {
     private int fetchResultThirdQuestion() {
         RadioButton radioButtonAnswer = findViewById(R.id.question_three_answer_c);
         if(radioButtonAnswer.isChecked()) {
+            Log.v("MainActivity", "Question 3: received 1 point");
             return 1;
         }
+        Log.v("MainActivity", "Question 3: received 0 point");
         return 0;
     }
 
@@ -220,8 +235,10 @@ public class MainActivity extends AppCompatActivity {
     private int fetchResultFourthQuestion() {
         RadioButton radioButtonAnswer = findViewById(R.id.question_four_answer_a);
         if(radioButtonAnswer.isChecked()) {
+            Log.v("MainActivity", "Question 4: received 1 point");
             return 1;
         }
+        Log.v("MainActivity", "Question 4: received 0 point");
         return 0;
     }
 
@@ -235,9 +252,15 @@ public class MainActivity extends AppCompatActivity {
         EditText editTextField = findViewById(R.id.input_text_question_five);
         String answer = editTextField.getText().toString();
         String[] correctAnswers = {"switzerland", "schweiz", "helvetia", "swiss", "schwiiz"};
-        if(Arrays.asList(answer.split(" ")).contains(correctAnswers)) {
-            return 1;
+        List<String> listOfCorrectAnswers = Arrays.asList(correctAnswers);
+        List<String> listOfGivenAnswers = Arrays.asList(answer.split(" "));
+        for(String str : listOfGivenAnswers) {
+            if(listOfCorrectAnswers.contains(str)) {
+                Log.v("MainActivity", "Question 5: received 1 point");
+                return 1;
+            }
         }
+        Log.v("MainActivity", "Question 5: received 0 point");
         return 0;
     }
 
@@ -248,12 +271,18 @@ public class MainActivity extends AppCompatActivity {
      * @return
      */
     private int fetchResultSixthQuestion() {
-        EditText editTextField = findViewById(R.id.input_text_question_five);
+        EditText editTextField = findViewById(R.id.input_text_question_six);
         String answer = editTextField.getText().toString();
         String[] correctAnswers = {"germany", "deutschland", "dütschland", "france", "frankreich", "frankriich"};
-        if(Arrays.asList(answer.split(" ")).contains(correctAnswers)) {
-            return 1;
+        List<String> listOfCorrectAnswers = Arrays.asList(correctAnswers);
+        List<String> listOfGivenAnswers = Arrays.asList(answer.split(" "));
+        for(String str : listOfGivenAnswers) {
+            if(listOfCorrectAnswers.contains(str)) {
+                Log.v("MainActivity", "Question 6: received 1 point");
+                return 1;
+            }
         }
+        Log.v("MainActivity", "Question 6: received 0 point");
         return 0;
     }
 
