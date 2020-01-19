@@ -2,6 +2,7 @@ package com.example.android.androidbasicssbbquiz;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -11,6 +12,7 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Arrays;
 import java.util.List;
@@ -55,11 +57,26 @@ public class MainActivity extends AppCompatActivity {
         fetchPersonalInformation();
         updateScoreValuesWithAnswers();
         String message = createMessage();
+        createAndDisplayToastMessage();
         if(emailSummaryRequested) {
             sendOutEmailSummary(message);
         }
         updateSummaryView(message);
         updateSubmitButton();
+    }
+
+
+    /**
+     * This method creates a toast of short duration and displays the total
+     * score of the user.
+     */
+    private void createAndDisplayToastMessage() {
+        Context context = getApplicationContext();
+        CharSequence totalScore = "Yout Total Score is: " + score;
+        int durationOfToast = Toast.LENGTH_SHORT;
+
+        Toast toast = Toast.makeText(context, totalScore, durationOfToast);
+        toast.show();
     }
 
     /**
